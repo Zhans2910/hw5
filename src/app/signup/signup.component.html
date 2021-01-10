@@ -1,0 +1,26 @@
+<div class="center">
+    
+    <div >
+      <h2>Sign up</h2>
+      <form [formGroup]="profile">
+        <div class="form-group" [ngClass]="{'has-error': ( submitted && profile.get('email').errors) }">
+          <input type="email" formControlName="email" #emailSignUp><br>
+          <span class="help-block" *ngIf="( submitted && profile.get('email').errors)">
+            <span  *ngIf="profile.get('email').errors.required">Email is required</span>
+           </span>
+          </div>
+          <h6 >Type your email</h6>
+          <div class="form-group" [ngClass]="{'has-error': (submitted && profile.get('password').errors) }">
+        <input type="password" formControlName="password" #passwordSignUp ><br>
+        <span class="help-block" *ngIf="(submitted && profile.get('password').errors)">
+          <span  *ngIf="profile.get('password').errors.required">Password is required</span>
+        <span *ngIf="profile.get('password').errors.minlength">Password must be greater than 6 characters</span>
+             </span>
+        </div>
+        <h6>Type your password</h6>
+        <p></p>
+      <button ng-click="submitted=true" class="btn btn-primary" (click)="onSignUp(emailSignUp.value, passwordSignUp.value)">Sign Up</button>
+    </form></div>
+    <br>
+    <a routerLink="/signin">Sign In</a>
+  </div>

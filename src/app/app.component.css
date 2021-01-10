@@ -1,0 +1,20 @@
+.button{
+    position: absolute;
+    right: 50px;
+    top: 5px;
+}
+.image{
+    position:absolute;
+    top:10x;
+    left:100px;
+}
+header{
+    background-color:lightblue;
+    padding:25px 0;
+}
+.cart_icon{
+    position:relative;
+}
+.cart_icon i{
+    font-size: 24px;
+}

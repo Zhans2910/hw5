@@ -1,0 +1,49 @@
+
+<div class="button">
+    Welcome, {{email}}
+    <button routerLink="/signin" class="btn btn-primary" (click)="logout()">Logout</button>
+    <button class="btn btn-danger" (click)="refresh()">Refresh</button>
+  </div>
+  <div class="content">
+  <div class="main">
+  <div class="products">
+          <ul *ngFor="let product of products">
+              <li class="product">
+                <div>
+                        <img src={{product.image}} alt={{product.title}}>
+                        <p>
+                            {{product.title}}
+                        </p>
+                    <div class="product_price">
+                        <div>{{formatCurrency(product.price)}}</div>
+                        <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+                    </div>
+                </div>
+              </li>
+
+          </ul>
+        </div>
+        </div>
+<div className="sidebar">
+    <ul class="cart-items" *ngFor="let item of cartItems">
+        <li>
+          <div class="cart">
+              <img class="ima" src={{item.image}}>
+                  <p>
+                      {{item.title}}
+                  </p>
+              <div class="product_price">
+                  <div>{{formatCurrency(item.price)}}x{{item.count}}</div>
+              </div>
+          </div>
+        </li>
+
+    </ul>
+    <div> Total: 
+        {{total}}
+    </div>
+    <div><button class="btn btn-success" *ngIf="cartItems.length!==0" (click)="proceed()">Proceed</button>
+    <button class="btn btn-danger" *ngIf="cartItems.length!==0" (click)="removeAll()">Remove All</button></div>
+    
+</div>
+</div>

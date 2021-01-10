@@ -1,0 +1,9 @@
+.center{
+    position: absolute;
+    right:500px;
+    top:100px;
+    background-color: lightblue;
+    width:400px;
+    text-align: center;
+    height: 400px;
+}
